@@ -43,34 +43,37 @@ Talon backRight;
             left wheel forward = -YVal, right wheel forward = YVal
           */ 
           double YVal = 1;
-          while (n < 50) { //forward
-           frontLeft.set(-YVal);
-          frontRight.set(YVal);
-          backLeft.set(-YVal);
-          backRight.set(YVal);
-            n++;
+          long end = System.currentTimeMillis() + 3000;
+          while (System.currentTimeMillis() < end) { //forward
+            frontLeft.set(-YVal);
+            frontRight.set(YVal);
+            backLeft.set(-YVal);
+            backRight.set(YVal);
           }
-          while (n < 50) { //right
+          long newend = end + 3000;
+          while (System.currentTimeMillis() < newend) { //right
             frontLeft.set(YVal);
             frontRight.set(YVal);
             backLeft.set(YVal);
             backRight.set(YVal);
-            n++;
           }
-          while (n < 50) { //back
-            frontLeft.set(Yval);
+          end = newend;
+          newend = end + 3000;
+          while (System.currentTimeMillis() < newend) { //back
+            frontLeft.set(YVal);
             frontRight.set(-YVal);
             backLeft.set(YVal);
             backRight.set(-YVal);
-            n++;
           }
-          while (n < 50) { //left
+          end = newend;
+          newend = end + 3000;
+          while (System.currentTimeMillis() < newend) { //left
             frontLeft.set(-YVal);
             frontRight.set(-YVal);
             backLeft.set(-YVal);
             backRight.set(-YVal);
-            n++;
           }
+            
       }        
  }
           
