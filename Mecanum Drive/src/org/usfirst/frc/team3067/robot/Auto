@@ -4,9 +4,6 @@ import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import java.util.Timer;
-import java.util.TimerTask;
-
 
 public class Auto {
 Timer AutoTimer;
@@ -21,17 +18,20 @@ Talon backRight;
           backLeft = new Talon(2);
           backRight = new Talon(3);
           }
-          
+         
    public void updateAuto {
-          setMotorAuto();
+          setMotorAuto(); // call more funtctions(yes) later 
           }
           
    public void setMotorAuto { //goes straight forward
           double YValue = 1;
+          long end = System.currentTimeMillis() + 15000;
+          while (System.currentTimeMillis() < end) {
           frontLeft.set(-YValue);
           frontRight.set(YValue);
           backLeft.set(-YValue);
           backRight.set(YValue);
+          }
           }
           
    public void setMotorSquare {
