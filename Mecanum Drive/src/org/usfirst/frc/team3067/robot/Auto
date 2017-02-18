@@ -1,0 +1,79 @@
+package org.usfirst.frc.team3067.robot;
+
+import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import java.util.Timer;
+import java.util.TimerTask;
+
+
+public class Auto {
+Timer AutoTimer;
+Talon frontLeft;
+Talon frontRight;
+Talon backLeft;
+Talon backRight;
+
+   public Auto() {
+          frontLeft = new Talon(0);
+          frontRight = new Talon(1);
+          backLeft = new Talon(2);
+          backRight = new Talon(3);
+          }
+          
+   public void updateAuto {
+          setMotorAuto();
+          }
+          
+   public void setMotorAuto { //goes straight forward
+          double YValue = 1;
+          frontLeft.set(-YValue);
+          frontRight.set(YValue);
+          backLeft.set(-YValue);
+          backRight.set(YValue);
+          }
+          
+   public void setMotorSquare {
+         /*
+            left wheel: forward spin = left, backward spin = right
+            right wheel: forward spin = right, backward spin = left
+            to go left: left wheel forward, right wheel back
+            to go right: left wheel back, right wheel forward
+            left wheel forward = -YVal, right wheel forward = YVal
+          */ 
+          double YVal = 1;
+          while (n < 50) { //forward
+           frontLeft.set(-YVal);
+          frontRight.set(YVal);
+          backLeft.set(-YVal);
+          backRight.set(YVal);
+            n++;
+          }
+          while (n < 50) { //right
+            frontLeft.set(YVal);
+            frontRight.set(YVal);
+            backLeft.set(YVal);
+            backRight.set(YVal);
+            n++;
+          }
+          while (n < 50) { //back
+            frontLeft.set(Yval);
+            frontRight.set(-YVal);
+            backLeft.set(YVal);
+            backRight.set(-YVal);
+            n++;
+          }
+          while (n < 50) { //left
+            frontLeft.set(-YVal);
+            frontRight.set(-YVal);
+            backLeft.set(-YVal);
+            backRight.set(-YVal);
+            n++;
+          }
+      }        
+ }
+          
+    
+
+
