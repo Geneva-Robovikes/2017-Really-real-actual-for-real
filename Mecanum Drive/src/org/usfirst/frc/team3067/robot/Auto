@@ -6,17 +6,18 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Auto {
-Timer AutoTimer;
 Talon frontLeft;
 Talon frontRight;
 Talon backLeft;
 Talon backRight;
+Talon primaryShooter;
 
    public Auto() {
           frontLeft = new Talon(0);
           frontRight = new Talon(1);
           backLeft = new Talon(2);
           backRight = new Talon(3);
+          primaryShooter = new Talon(6);
           }
          
    public void updateAuto {
@@ -26,13 +27,13 @@ Talon backRight;
    public void setMotorAuto { //goes straight forward
           double YValue = 1;
           long end = System.currentTimeMillis() + 15000;
-          while (System.currentTimeMillis() < end) {
-          frontLeft.set(-YValue);
-          frontRight.set(YValue);
-          backLeft.set(-YValue);
-          backRight.set(YValue);
+          while(System.currentTimeMillis() < end) {
+            frontLeft.set(-YValue);
+            frontRight.set(YValue);
+            backLeft.set(-YValue);
+            backRight.set(YValue);
           }
-          }
+        }
           
    public void setMotorSquare {
          /*
@@ -50,31 +51,35 @@ Talon backRight;
             backLeft.set(-YVal);
             backRight.set(YVal);
           }
-          long newend = end + 3000;
-          while (System.currentTimeMillis() < newend) { //right
+          end += 3000;
+          while (System.currentTimeMillis() < end) { //right
             frontLeft.set(YVal);
             frontRight.set(YVal);
             backLeft.set(YVal);
             backRight.set(YVal);
-          }
-          end = newend;
-          newend = end + 3000;
-          while (System.currentTimeMillis() < newend) { //back
+          }          
+          end += 3000;
+          while (System.currentTimeMillis() < end) { //back
             frontLeft.set(YVal);
             frontRight.set(-YVal);
             backLeft.set(YVal);
             backRight.set(-YVal);
-          }
-          end = newend;
-          newend = end + 3000;
-          while (System.currentTimeMillis() < newend) { //left
+          }         
+          end += 3000;
+          while (System.currentTimeMillis() < end) { //left
             frontLeft.set(-YVal);
             frontRight.set(-YVal);
             backLeft.set(-YVal);
             backRight.set(-YVal);
           }
             
-      }        
+      }
+      public void Autoshoot() {
+         long end = System.currentTimeMillis + 1000;
+         while (System.currentTimeMillis < end) {
+            primaryShooter.set(1);
+         }
+      }
  }
           
     
