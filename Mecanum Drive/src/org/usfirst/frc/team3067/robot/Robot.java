@@ -10,7 +10,7 @@ public class Robot extends IterativeRobot {
 	//myDrive.setInvertedMotor(myDrive.MotorType kFrontLeft, true);	// invert the left side motors
 	//myDrive.setInvertedMotor(MotorType.kRearLeft, true);
 	//RobotDrive robo = new RobotDrive
-	public void robotInit(){ //asdfghjklqwertyuiop
+	public void robotInit(){
 		grunchBot  = new RobotInstance();
 	}
 	
