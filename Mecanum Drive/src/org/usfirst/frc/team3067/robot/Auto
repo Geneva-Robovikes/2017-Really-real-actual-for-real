@@ -25,7 +25,7 @@ Talon primaryShooter;
           }
           
    public void setMotorAuto { //goes straight forward
-          double YValue = 1;
+          int YValue = 1;  //changed to int value for faster processing
           long end = System.currentTimeMillis() + 15000;
           while(System.currentTimeMillis() < end) {
             frontLeft.set(-YValue);
