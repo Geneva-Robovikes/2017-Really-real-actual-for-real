@@ -6,11 +6,11 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Auto {
-Talon frontLeft;
-Talon frontRight;
-Talon backLeft;
-Talon backRight;
-Talon primaryShooter;
+   Talon frontLeft;
+   Talon frontRight;
+   Talon backLeft;
+   Talon backRight;
+   Talon primaryShooter;
 
    public Auto() {
           frontLeft = new Talon(0);
@@ -26,7 +26,7 @@ Talon primaryShooter;
           
    public void setMotorAuto { //goes straight forward
           int YValue = 1;  //changed to int value for faster processing
-          long end = System.currentTimeMillis() + 15000;
+          long end = System.currentTimeMillis() + 15000; //Use different function for final code because Rio does not have system time
           while(System.currentTimeMillis() < end) {
             frontLeft.set(-YValue);
             frontRight.set(YValue);
