@@ -43,7 +43,7 @@ Talon primaryShooter;
             to go right: left wheel back, right wheel forward
             left wheel forward = -YVal, right wheel forward = YVal
           */ 
-          double YVal = 1;
+          int YVal = 1; //changed to int value for faster processing
           long end = System.currentTimeMillis() + 3000;
           while (System.currentTimeMillis() < end) { //forward
             frontLeft.set(-YVal);
